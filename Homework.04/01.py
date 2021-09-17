@@ -9,12 +9,19 @@ Original file is located at
 
 import math
 a = float(input('a='))
-while a == 0:
-     if a == 0:
-       print('xin hãy nhập lại a.')
-       a = float(input('a='))
 b = float(input('b='))
 c = float(input('c='))
+if a == 0:
+    if b == 0:
+        if c == 0:
+            print('Phương trình vô số nghiệm')
+        else:
+            print('Phương trình vô nghiệm')
+    else:
+        if c == 0:
+            print('Phương trình có nghiệm là: x = 0')
+        else:
+            print(f' Phương trình có nghiệm là: x = {-c/b}')      
 delta = b**2 - 4*a*c
 if delta > 0:
    x1 = (-b + math.sqrt(delta) / (2*a))
