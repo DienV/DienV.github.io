@@ -7,17 +7,13 @@ Original file is located at
     https://colab.research.google.com/drive/1S2aq1LLtCW6c47SfeYOvxp3D1BhqGvHm
 """
 
-def common_data(list1, list2):
+def common_data(s1, s2):
     result = False
-    for x in list1:
-        for y in list2:
+    for x in s1:
+        for y in s2:
             if x == y:
                 result = True
                 return result
 a = [1, 2, 3, 4, 5]
 b = [5, 6, 7, 8, 9]
-print(common_data(a, b))
-  
-a = [1, 2, 3, 4, 5]
-b = [6, 7, 8, 9]
 print(common_data(a, b))
