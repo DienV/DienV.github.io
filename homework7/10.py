@@ -8,5 +8,7 @@ Original file is located at
 """
 
 s = ["www.hust.edu.vn", "www.wikipedia.org", "www.asp.net", "www.amazon.com"]
+b = ("")
 for i in s:
-  print(i.split(".")[-1])
+  b +="," + i.split(".")[-1]
+print(b)
