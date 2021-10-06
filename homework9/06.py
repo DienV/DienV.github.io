@@ -8,10 +8,10 @@ Original file is located at
 """
 
 def is_pangram(s):
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  alphabet = "aelusivproft"
   for char in alphabet:
         if char not in s.lower():
             return False
   return True
-s = 'Elusive, evasive, persistent. Righteous traits for a rogue'
+s = 'elusive evasive persistent righteous traits for a rogue'
 is_pangram(s)
