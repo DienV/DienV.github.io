@@ -13,8 +13,8 @@ def is_perfect(n):
     if (n % i == 0):
       a = a + i
   if (a == n):
-    print('True')
+    return True
   else:
-    print('False')
+    return False
 
 is_perfect(6)
