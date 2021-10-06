@@ -8,7 +8,8 @@ Original file is located at
 """
 
 def max_min(*numbers):
-  print(max(s1))
-  print(min(s1))
+  a = max(s1)
+  b = min(s1)
+  return a, b
 s1 = [1, 3, 5, 88, -3]
 max_min(s1)
