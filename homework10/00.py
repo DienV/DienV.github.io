@@ -7,13 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1HqH0fA3q8WqVh39J8dWZdlNpMBMP6l3F
 """
 
-class Books:
-    def name(self, name):
-        return name
-
-b = Books()
-print(type(b).__name__)
-
 import random
 
 def reroll_dice():
