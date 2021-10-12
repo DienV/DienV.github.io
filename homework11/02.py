@@ -13,19 +13,6 @@ class Dog:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-dog1 = Dog('Fake', 2)
-dog2 = Dog('Mickey', 7)
-dog3 = Dog('Fuk', 5)
-def get_biggest_number(*args):
-  return max(*args)
-print(f'The oldest doggo is {get_biggest_number(2, 5, 7)} years old')
-
-class Dog:
-    species = 'mammal'
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
 
     def description(self):
         return f'{self.name} is {self.age} years old'
