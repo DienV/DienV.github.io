@@ -32,7 +32,7 @@ class Bulldog(Dog):
 
 class Pet:
 
-  def __init__(self, dog):
+  def __init__(self, dogs):
     self.dogs = dogs
   
 d1 = Dog('Tom', 6)
