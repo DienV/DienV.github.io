@@ -46,4 +46,4 @@ pet = Pet(the_dogs)
 def describe(Pet):
   return f'I have {len(the_dogs)} dogs', f'{d1.name} is {d1.age}',  f'{d2.name} is {d2.age}',  f'{d3.name} is {d3.age}',  f'{d4.name} is {d4.age}',  "And they're all mammals, of course"
 
-description(pet)
+describe(pet)
