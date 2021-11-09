@@ -43,4 +43,4 @@ while game == 'Continue':
 
   elif s1 == 7:
     game = 'Lose'
-    print('You lose!')
+    print('You fucking suck lol.')
