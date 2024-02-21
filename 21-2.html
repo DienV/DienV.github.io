@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin sinh viên</title>
+</head>
+<body>
+    <h1>Thông tin sinh viên</h1>
+    <form id="studentForm">
+        Mã SV: <input type="text" id="maSV"><br>
+        Họ và tên: <input type="text" id="hoTen"><br>
+        Ngày sinh: <input type="date" id="ngaySinh"><br>
+        Lớp học: <input type="text" id="lopHoc"><br>
+        Điểm GPA: <input type="number" id="diemGPA"><br>
+        <input type="submit" value="Thêm sinh viên">
+    </form>
+    <h2>Danh sách sinh viên</h2>
+    <div id="studentList"></div>
+
+    <script>
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var maSV = document.getElementById('maSV').value;
+            var hoTen = document.getElementById('hoTen').value;
+            var ngaySinh = document.getElementById('ngaySinh').value;
+            var lopHoc = document.getElementById('lopHoc').value;
+            var diemGPA = document.getElementById('diemGPA').value;
+            var studentList = document.getElementById('studentList');
+            studentList.innerHTML += '<p>' + maSV + ' - ' + hoTen + ' - ' + ngaySinh + ' - ' + lopHoc + ' - ' + diemGPA + '</p>';
+        });
+    </script>
+</body>
+</html>
