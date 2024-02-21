@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin sinh viên</title>
+</head>
+<body>
+    <h1>Thông tin sinh viên</h1>
+    <form id="studentForm">
+        Mã SV: <input type="text" id="maSV"><br>
+        Họ và tên: <input type="text" id="hoTen"><br>
+        Ngày sinh: <input type="date" id="ngaySinh"><br>
+        Lớp học: <input type="text" id="lopHoc"><br>
+        Điểm GPA: <input type="number" id="diemGPA"><br>
+        <input type="submit" value="Thêm sinh viên">
+        <input type="button" id="editButton" value="Chỉnh sửa thông tin" disabled>
+    </form>
+    <h2>Danh sách sinh viên</h2>
+    <div id="studentList"></div>
+
+    <script>
+        var selectedStudent = null;
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var maSV = document.getElementById('maSV').value;
+            var hoTen = document.getElementById('hoTen').value;
+            var ngaySinh = document.getElementById('ngaySinh').value;
+            var lopHoc = document.getElementById('lopHoc').value;
+            var diemGPA = document.getElementById('diemGPA').value;
+            var studentList = document.getElementById('studentList');
+            if (selectedStudent) {
+                selectedStudent.innerHTML = maSV + ' - ' + hoTen + ' - ' + ngaySinh + ' - ' + lopHoc + ' - ' + diemGPA;
+                selectedStudent = null;
+            } else {
+                var p = document.createElement('p');
+                p.innerHTML = maSV + ' - ' + hoTen + ' - ' + ngaySinh + ' - ' + lopHoc + ' - ' + diemGPA;
+                p.addEventListener('click', function() {
+                    var parts = this.innerHTML.split(' - ');
+                    document.getElementById('maSV').value = parts[0];
+                    document.getElementById('hoTen').value = parts[1];
+                    document.getElementById('ngaySinh').value = parts[2];
+                    document.getElementById('lopHoc').value = parts[3];
+                    document.getElementById('diemGPA').value = parts[4];
+                    selectedStudent = this;
+                    document.getElementById('editButton').disabled = false;
+                });
+                studentList.appendChild(p);
+            }
+        });
+        document.getElementById('editButton').addEventListener('click', function() {
+            document.getElementById('maSV').value = '';
+            document.getElementById('hoTen').value = '';
+            document.getElementById('ngaySinh').value = '';
+            document.getElementById('lopHoc').value = '';
+            document.getElementById('diemGPA').value = '';
+            this.disabled = true;
+        });
+    </script>
+</body>
+</html>
+
+
