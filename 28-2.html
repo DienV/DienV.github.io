@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Đen */
+            color: #FFFFFF; /* Trắng */
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #B90000; /* Đỏ đậm */
+            border-radius: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #FFFFFF; /* Trắng */
+            color: #B90000; /* Đỏ đậm */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" placeholder="Tên đăng nhập" id="username" required>
+            <input type="password" placeholder="Mật khẩu" id="password" required>
+            <input type="submit" value="Đăng nhập">
+        </form>
+    </div>
+    <div class="container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <input type="text" placeholder="Tên người dùng" id="newUsername" required>
+            <input type="email" placeholder="Email" id="email" required>
+            <input type="password" placeholder="Mật khẩu" id="newPassword" required>
+            <input type="password" placeholder="Xác nhận mật khẩu" id="confirmPassword" required>
+            <input type="submit" value="Đăng ký">
+        </form>
+    </div>
+
+    <script>
+        // Kiểm tra tính hợp lệ của thông tin đăng nhập và đăng ký bằng JavaScript
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            // Kiểm tra thông tin đăng nhập (demo, không gọi đến backend)
+            if (username === "demo" && password === "123456") {
+                alert("Đăng nhập thành công!");
+            } else {
+                alert("Tên đăng nhập hoặc mật khẩu không đúng.");
+            }
+        });
+
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const newUsername = document.getElementById("newUsername").value;
+            const email = document.getElementById("email").value;
+            const newPassword = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            // Kiểm tra thông tin đăng ký (demo, không gọi đến backend)
+            if (newPassword === confirmPassword) {
+                alert("Đăng ký thành công!");
+            } else {
+                alert("Mật khẩu xác nhận không khớp.");
+            }
+        });
+    </script>
+</body>
+</html>
