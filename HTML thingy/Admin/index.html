@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Pages</title>
+</head>
+<body>
+  <ul id="adminPages"></ul>
+  <div id="adminContent"></div>
+
+  <script>
+    window.onload = function() {
+      const adminPages = document.getElementById('adminPages');
+      const adminContent = document.getElementById('adminContent');
+
+      // Define the list of directories containing admin pages
+      const directories = ['1', '2', '3', '4'];
+
+      // Load admin pages from directories
+      directories.forEach(directory => {
+        const pageLink = document.createElement('li');
+        pageLink.innerHTML = `<a href="#" onclick="loadAdminPage('${directory}')">Admin Page ${directory}</a>`;
+        adminPages.appendChild(pageLink);
+      });
+
+      // Function to load admin page content
+      function loadAdminPage(directory) {
+        fetch(`/${directory}/index.html`)
+          .then(response => response.text())
+          .then(html => {
+            adminContent.innerHTML = html;
+          })
+          .catch(error => console.error('Error loading admin page:', error));
+      }
+    }
+  </script>
+</body>
+</html>
