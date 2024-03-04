@@ -1,37 +1,32 @@
-.container {
-  max-width: 800px;
-  margin: 50px auto;
-}
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('searchForm');
+  const studentResults = document.getElementById('studentResults');
 
-h2 {
-  margin-bottom: 20px;
-}
+  searchForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const studentSearch = searchForm.studentSearch.value;
 
-.form-group {
-  margin-bottom: 15px;
-}
+    // Perform search for student results (for demonstration, use mock data)
+    const studentData = {
+      name: 'John Doe',
+      exams: [
+        { name: 'Midterm Exam', score: 85, status: 'Completed', timestamp: '2024-03-05 10:30:00' },
+        { name: 'Final Exam', score: 90, status: 'Completed', timestamp: '2024-04-15 13:45:00' }
+      ]
+    };
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
+    // Display student results
+    let resultHTML = `<h3>Kết quả của Sinh viên: ${studentData.name}</h3>`;
+    resultHTML += '<ul>';
+    studentData.exams.forEach(exam => {
+      resultHTML += `
+        <li>
+          <strong>${exam.name}</strong>: Điểm ${exam.score} - ${exam.status}, Thời gian: ${exam.timestamp}
+        </li>
+      `;
+    });
+    resultHTML += '</ul>';
 
-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-button {
-  padding: 10px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
-}
+    studentResults.innerHTML = resultHTML;
+  });
+});
