@@ -1,0 +1,23 @@
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input, select {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 5px;
+}
