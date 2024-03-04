@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Simulated data for exam list, user list, and statistics
   const examData = [
-    { name: 'Midterm Exam', status: 'Free Access' },
-    { name: 'Final Exam', status: 'Time-bound' }
+    { name: 'Midterm Exam', status: 'Free Access', link: '#' },
+    { name: 'Final Exam', status: 'Time-bound', link: '#' }
   ];
 
   const userData = [
-    { username: 'user1', email: 'user1@example.com' },
-    { username: 'user2', email: 'user2@example.com' }
+    { username: 'user1', email: 'user1@example.com', link: '#' },
+    { username: 'user2', email: 'user2@example.com', link: '#' }
   ];
 
   const statisticsData = {
@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // Display exam list
   examList.innerHTML = `<h3>Exam List:</h3>`;
   examData.forEach(exam => {
-    examList.innerHTML += `<p>${exam.name} - ${exam.status}</p>`;
+    examList.innerHTML += `<p><a href="${exam.link}">${exam.name} - ${exam.status}</a></p>`;
   });
 
   // Display user list
   userList.innerHTML = `<h3>User List:</h3>`;
   userData.forEach(user => {
-    userList.innerHTML += `<p>${user.username} - ${user.email}</p>`;
+    userList.innerHTML += `<p><a href="${user.link}">${user.username} - ${user.email}</a></p>`;
   });
 
   // Display statistics
