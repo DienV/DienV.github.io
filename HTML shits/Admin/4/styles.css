@@ -1,0 +1,21 @@
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+#statistics {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+#statistics h3 {
+  margin-top: 0;
+}
+
+#statistics p {
+  margin-bottom: 10px;
+}
