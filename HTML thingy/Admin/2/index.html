@@ -9,20 +9,9 @@
 <body>
   <div class="container">
     <h2>Dashboard Admin</h2>
-    <div class="admin-options">
-      <button onclick="openTab('examsTab')">Quản lý kỳ thi</button>
-      <button onclick="openTab('usersTab')">Quản lý người dùng</button>
-      <button onclick="openTab('statsTab')">Thống kê</button>
-    </div>
-    <div id="examsTab" class="admin-tab active">
-      <!-- Content for managing exams goes here -->
-    </div>
-    <div id="usersTab" class="admin-tab">
-      <!-- Content for managing users goes here -->
-    </div>
-    <div id="statsTab" class="admin-tab">
-      <!-- Content for statistics goes here -->
-    </div>
+    <div id="examList"></div>
+    <div id="userList"></div>
+    <div id="statistics"></div>
   </div>
   <script src="script.js"></script>
 </body>
