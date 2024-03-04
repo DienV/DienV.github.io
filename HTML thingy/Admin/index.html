@@ -15,7 +15,7 @@
       const adminContent = document.getElementById('adminContent');
 
       // Define the list of directories containing admin pages
-      const directories = ['1', '2', '3', '4'];
+      const directories = ['1', '2', '3', '4', '5'];
 
       // Load admin pages from directories
       directories.forEach(directory => {
@@ -26,13 +26,18 @@
 
       // Function to load admin page content
       function loadAdminPage(directory) {
-        fetch(`/${directory}/index.html`)
+        fetch(`Admin/${directory}/index.html`)
           .then(response => response.text())
           .then(html => {
             adminContent.innerHTML = html;
           })
           .catch(error => console.error('Error loading admin page:', error));
       }
+    }
+  </script>
+</body>
+</html>
+
     }
   </script>
 </body>
