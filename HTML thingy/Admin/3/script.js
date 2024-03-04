@@ -1,20 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const examForm = document.getElementById('examForm');
+  const form = document.getElementById('examForm');
 
-  examForm.addEventListener('submit', function(event) {
+  // Load saved data from local storage
+  const savedData = JSON.parse(localStorage.getItem('examData')) || {};
+
+  // Function to display exam form data
+  function displayFormData() {
+    const examNameInput = document.getElementById('examName');
+    const examDescriptionInput = document.getElementById('examDescription');
+    const examTypeInput = document.getElementById('examType');
+
+    // Populate form fields with saved data
+    examNameInput.value = savedData.name || '';
+    examDescriptionInput.value = savedData.description || '';
+    examTypeInput.value = savedData.type || '';
+  }
+
+  // Function to save form data to local storage
+  function saveFormData() {
+    const examNameInput = document.getElementById('examName');
+    const examDescriptionInput = document.getElementById('examDescription');
+    const examTypeInput = document.getElementById('examType');
+
+    // Save form data to local storage
+    const formData = {
+      name: examNameInput.value,
+      description: examDescriptionInput.value,
+      type: examTypeInput.value
+    };
+    localStorage.setItem('examData', JSON.stringify(formData));
+  }
+
+  // Display saved form data
+  displayFormData();
+
+  // Event listener for form submission
+  form.addEventListener('submit', function(event) {
     event.preventDefault();
-    const examName = examForm.examName.value;
-    const examDescription = examForm.examDescription.value;
-    const examType = examForm.examType.value;
-    const examQuestions = examForm.examQuestions.value;
-
-    // Process the exam data (for demonstration, just log it)
-    console.log('Exam Name:', examName);
-    console.log('Exam Description:', examDescription);
-    console.log('Exam Type:', examType);
-    console.log('Exam Questions:', examQuestions);
-
-    // Clear form fields after submission
-    examForm.reset();
+    saveFormData();
+    alert('Form data saved successfully!');
   });
 });
