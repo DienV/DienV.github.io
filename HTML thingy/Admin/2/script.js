@@ -64,3 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
     displayStatistics();
   });
 });
+
+  statistics.addEventListener('click', function() {
+    displayStatistics();
+  });
+});
