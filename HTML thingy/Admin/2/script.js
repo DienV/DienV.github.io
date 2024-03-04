@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Simulated data for exam list, user list, and statistics
   const examData = [
-    { name: 'Midterm Exam', status: 'Free Access', link: '#' },
-    { name: 'Final Exam', status: 'Time-bound', link: '#' }
+    { name: 'Midterm Exam', status: 'Free Access' },
+    { name: 'Final Exam', status: 'Time-bound' }
   ];
 
   const userData = [
-    { username: 'user1', email: 'user1@example.com', link: '#' },
-    { username: 'user2', email: 'user2@example.com', link: '#' }
+    { username: 'user1', email: 'user1@example.com' },
+    { username: 'user2', email: 'user2@example.com' }
   ];
 
   const statisticsData = {
@@ -21,24 +21,46 @@ document.addEventListener('DOMContentLoaded', function() {
     averageScore: 75
   };
 
-  // Display exam list
-  examList.innerHTML = `<h3>Exam List:</h3>`;
-  examData.forEach(exam => {
-    examList.innerHTML += `<p><a href="${exam.link}">${exam.name} - ${exam.status}</a></p>`;
+  // Function to display exam list
+  function displayExamList() {
+    examList.innerHTML = `<h3>Exam List:</h3>`;
+    examData.forEach(exam => {
+      examList.innerHTML += `<p>${exam.name} - ${exam.status}</p>`;
+    });
+  }
+
+  // Function to display user list
+  function displayUserList() {
+    userList.innerHTML = `<h3>User List:</h3>`;
+    userData.forEach(user => {
+      userList.innerHTML += `<p>${user.username} - ${user.email}</p>`;
+    });
+  }
+
+  // Function to display statistics
+  function displayStatistics() {
+    statistics.innerHTML = `
+      <h3>Statistics:</h3>
+      <p>Total Users: ${statisticsData.totalUsers}</p>
+      <p>Total Exams: ${statisticsData.totalExams}</p>
+      <p>Completion Rate: ${statisticsData.completionRate}</p>
+      <p>Average Score: ${statisticsData.averageScore}</p>
+    `;
+  }
+
+  // Display exam list by default
+  displayExamList();
+
+  // Event listeners for options
+  examList.addEventListener('click', function() {
+    displayExamList();
   });
 
-  // Display user list
-  userList.innerHTML = `<h3>User List:</h3>`;
-  userData.forEach(user => {
-    userList.innerHTML += `<p><a href="${user.link}">${user.username} - ${user.email}</a></p>`;
+  userList.addEventListener('click', function() {
+    displayUserList();
   });
 
-  // Display statistics
-  statistics.innerHTML = `
-    <h3>Statistics:</h3>
-    <p>Total Users: ${statisticsData.totalUsers}</p>
-    <p>Total Exams: ${statisticsData.totalExams}</p>
-    <p>Completion Rate: ${statisticsData.completionRate}</p>
-    <p>Average Score: ${statisticsData.averageScore}</p>
-  `;
+  statistics.addEventListener('click', function() {
+    displayStatistics();
+  });
 });
